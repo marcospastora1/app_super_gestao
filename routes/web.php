@@ -36,3 +36,13 @@ Route::prefix('app')->group(function () {
         return 'Produtos';
     })->name('app.produto');
 });
+
+Route::get('/rota1', function () {
+    echo 'rota 1';
+})->name('site.rota1');
+
+Route::get('/rota2', function () {
+    return redirect()->route('site.rota1');
+})->name('site.rota2');
+
+//Route::redirect('/rota2', 'rota1');
