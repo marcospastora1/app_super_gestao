@@ -5,15 +5,13 @@
 @endphp
 {{-- @unless executa se o resultado for false --}}
 
-Fornecedor: {{ $fornecedores[0]['nome'] }}
-<br />
-Status: {{ $fornecedores[0]['status'] }}
-<br />
-@if (!($fornecedores[0]['status'] == 'S'))
-    Fornecedor inativo
-@endif
-<br />
-@unless($fornecedores[0]['status'] == 'S')
-    {{-- Se o retorno da conição for false --}}
-    Fornecedor inativo
-@endunless
+
+@isset($fornecedores)
+    Fornecedor: {{ $fornecedores[1]['nome'] }}
+    <br />
+    Status: {{ $fornecedores[1]['status'] }}
+    <br />
+    @isset($fornecedores[1]['cnpj'])
+        CNPJ: {{ $fornecedores[1]['cnpj'] }}
+    @endisset
+@endisset
