@@ -32,6 +32,8 @@ class FornecedorController extends Controller
             ]
 
         ];
+
+        $fornecedores = json_decode(json_encode($fornecedores));
         return view('app.fornecedor.index', compact('fornecedores'));
     }
 }
