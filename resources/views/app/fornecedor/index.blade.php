@@ -5,17 +5,15 @@
 @endphp
 {{-- @unless executa se o resultado for false --}}
 
-@dd(json_decode($fornecedores));
-
 @isset($fornecedores)
     @foreach ($fornecedores as $fornecedor)
-        Fornecedor: {{ $fornecedor->nome }}
-        {{--  <br />
-        Status: {{ $fornecedor->status }}
+        Fornecedor: {{ $fornecedor['nome'] }}
         <br />
-        CNPJ: {{ $fornecedor->cnpj ?? 'Dado não foi preenchido' }}
+        Status: {{ $fornecedor['status'] }}
         <br />
-        Telefone: {{ $fornecedor->ddd ?? '' }} {{ $fornecedor->telefone ?? '' }}
-        <hr> --}}
+        CNPJ: {{ $fornecedor['cnpj'] ?? 'Dado não foi preenchido' }}
+        <br />
+        Telefone: {{ $fornecedor['ddd'] ?? '' }} {{ $fornecedor['telefone'] ?? '' }}
+        <hr>
     @endforeach
 @endisset
