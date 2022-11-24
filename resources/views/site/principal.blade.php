@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <title>Super Gestão - Principal</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ asset('css/estilo_basico.css') }}">
-</head>
-
-<body>
+@extends('site.layout.basico')
+@section('conteudo')
     <div class="topo">
 
         <div class="logo">
@@ -71,6 +63,4 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
+@endsection
